@@ -1,0 +1,41 @@
+[0m22:31:06.998526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103fd7bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cb3020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cb2d20>]}
+
+
+============================== 22:31:07.000506 | 873b62a5-4925-4637-b982-1866aaa84443 ==============================
+[0m22:31:07.000506 [info ] [MainThread]: Running with dbt=1.12.5
+[0m22:31:07.000728 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'invocation_command': 'dbt init aws_snowflake', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'logs', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'quiet': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'printer_width': '80', 'hints_enabled': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'introspect': 'True', 'empty': 'None', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'log_cache_events': 'False', 'profiles_dir': '/Users/shoon/.dbt', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_format': 'default', 'version_check': 'True'}
+[0m22:31:07.024362 [info ] [MainThread]: Creating dbt configuration folder at /Users/shoon/.dbt
+[0m22:31:07.025456 [debug] [MainThread]: Starter project path: /Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m22:31:07.028119 [info ] [MainThread]: Setting up your profile.
+[0m22:32:03.579474 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m22:32:03.583980 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 504, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 363, in run
+    self.setup_profile(profile_name)
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 264, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 245, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/click/termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/shoon/Documents/AWS_Snowflake/.venv/lib/python3.12/site-packages/click/termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:32:03.602624 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 56.63458, "process_in_blocks": "0", "process_kernel_time": 0.10389, "process_mem_max_rss": "120438784", "process_out_blocks": "0", "process_user_time": 0.478214}
+[0m22:32:03.603273 [debug] [MainThread]: Command `dbt init` failed at 22:32:03.603181 after 56.64 seconds
+[0m22:32:03.603882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ce4d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cb30e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cb3020>]}
+[0m22:32:03.604317 [debug] [MainThread]: Flushing usage events
+[0m22:32:05.174496 [debug] [MainThread]: An error was encountered while trying to flush usage events
